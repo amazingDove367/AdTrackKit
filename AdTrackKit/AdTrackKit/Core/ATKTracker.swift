@@ -32,12 +32,13 @@ public final class ATKTracker {
 
     // initialize() 전에는 설정이 없으니까
     private var configuration: ATKConfiguration?
-
     private var isInitialized = false
-
     private var sessionId: String = UUID().uuidString
 
     private let eventStore = ATKEventStore()
+
+    private var networkClient: ATKNetworkClient?
+    private var batchUploader: ATKBatchUploader?
 
     // MARK: - Public API
 
@@ -57,6 +58,20 @@ public final class ATKTracker {
 
         // 로거 레벨 설정
         ATKLogger.logLevel = config.logLevel
+
+        // 네트워크 클라이언트 생성
+        let client = ATKNetworkClient()
+        self.networkClient = client
+
+        // 배치 업로더 생성 및 시작
+        let uploader = ATKBatchUploader(
+            eventStore: eventStore,
+            networkClient: client,
+            configuration: config
+        )
+        self.batchUploader = uploader
+        uploader.start()
+        // 타이머가 시작되어 batchInterval초마다 자동 전송
 
         ATKLogger.info("AdTrackKit 초기화 완료 (appKey: \(config.appKey), env: \(config.environment))")
         ATKLogger.info("배치 설정 - 크기: \(config.batchSize), 간격: \(config.batchInterval)")
@@ -93,8 +108,13 @@ public final class ATKTracker {
 
     // 즉시 전송 - 앱이 백그라운드로 갈 때 호출
     public func flush() {
+        guard isInitialized else {
+            ATKLogger.error("SDK가 초기화 되지 않았습니다.")
+            return
+        }
+
         ATKLogger.info("flush() 호출 - 미전송 이벤트 즉시 전송 시도")
-        ATKLogger.debug("대기 중인 이벤트: \(eventStore.pendingCount)개")
+        batchUploader?.uploadImmediately()
     }
 }
 
