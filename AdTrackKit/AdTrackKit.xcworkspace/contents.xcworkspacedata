@@ -4,4 +4,7 @@
    <FileRef
       location = "group:AdTrackKit.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:../AdTrackKitDemo/AdTrackKitDemo.xcodeproj">
+   </FileRef>
 </Workspace>

@@ -19,5 +19,60 @@
 			</array>
 		</dict>
 	</dict>
+
+	<!-- 앱 자체 URL 스킴 등록: KG이니시스 결제 완료 후 리디렉션 수신 -->
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.atkmall.payment</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>atkmall</string>
+			</array>
+		</dict>
+	</array>
+
+	<!--
+		LSApplicationQueriesSchemes:
+		UIApplication.canOpenURL(_:) 로 확인 가능한 서드파티 URL 스킴 목록.
+		iOS 9+ 에서는 이 목록에 없는 스킴은 canOpenURL이 항상 false를 반환합니다.
+		UIApplication.open(_:) 자체는 이 목록과 무관하게 동작합니다.
+	-->
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<!-- 금융결제원 뱅크페이 -->
+		<string>kftc-bankpay</string>
+		<!-- ISP / 페이북 -->
+		<string>ispmobile</string>
+		<!-- 카카오페이 -->
+		<string>kakaopay</string>
+		<!-- 토스 -->
+		<string>supertoss</string>
+		<!-- 네이버페이 -->
+		<string>naverpaycoin</string>
+		<!-- KB국민카드 앱카드 -->
+		<string>kb-acp</string>
+		<!-- 신한카드 앱카드 -->
+		<string>shinhan-sr-ansimclick</string>
+		<!-- 롯데 스마트페이 -->
+		<string>lottesmartpay</string>
+		<!-- 롯데 앱카드 -->
+		<string>lotteappcard</string>
+		<!-- 하나카드 1Q페이 -->
+		<string>hanacard-ansimclick</string>
+		<!-- 현대카드 -->
+		<string>hdcardappcardansimclick</string>
+		<!-- 하나카드 클라우드페이 -->
+		<string>cloudpay</string>
+		<!-- LG U+ 페이나우 -->
+		<string>lguthepay-xpay</string>
+		<!-- 삼성카드 안심클릭 -->
+		<string>mpocket.online.ansimclick</string>
+		<!-- 우리카드 -->
+		<string>wooricard-ansimclick</string>
+		<!-- NH농협카드 -->
+		<string>nhappcardansimclick</string>
+	</array>
 </dict>
 </plist>
