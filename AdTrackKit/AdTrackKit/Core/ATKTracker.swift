@@ -29,7 +29,7 @@ public final class ATKTracker {
 
     // initialize() 전에는 설정이 없으니까
     private var configuration: ATKConfiguration?
-    private var isInitialized = false
+    var isInitialized = false   // internal: ATKTracker+Payment.swift 에서 접근
     private var sessionId: String = UUID().uuidString
 
     private let eventStore = ATKEventStore()

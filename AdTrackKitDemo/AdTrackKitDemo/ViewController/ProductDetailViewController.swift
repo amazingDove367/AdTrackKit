@@ -495,8 +495,33 @@ final class ProductDetailViewController: UIViewController {
             "product_name": product.name,
             "price":        "\(product.price)"
         ])
-        let paymentVC = InicisPaymentViewController(product: product)
-        navigationController?.pushViewController(paymentVC, animated: true)
+
+        // ── SDK 결제 호출 ─────────────────────────────────────────────────
+        // InicisPaymentViewController 를 직접 사용하는 대신
+        // ATKTracker.shared.presentPayment() 를 통해 SDK 내부 결제창을 호출합니다.
+        let config = ATKPaymentConfiguration(
+            productId:    product.id,
+            productName:  product.name,
+            productEmoji: product.emoji,
+            price:        product.price,
+            mid:          "INIpayTest",     // 운영 전환 시 실제 MID 교체
+            returnScheme: "atkmall",        // Info.plist CFBundleURLTypes 등록된 스킴
+            buyerName:    "홍길동",
+            buyerTel:     "01012345678",
+            buyerEmail:   "buyer@atkmall.com"
+        )
+
+        ATKTracker.shared.presentPayment(configuration: config, from: self) { [weak self] result in
+            switch result {
+            case .success(let orderId, _):
+                self?.navigationController?.popToRootViewController(animated: true)
+                self?.showToast("주문번호 \(orderId) 결제 완료!")
+            case .failure(let message):
+                self?.showToast(message.isEmpty ? "결제가 실패했습니다." : message)
+            case .cancelled:
+                break   // 사용자가 직접 닫음, 별도 처리 없음
+            }
+        }
     }
 
     @objc
