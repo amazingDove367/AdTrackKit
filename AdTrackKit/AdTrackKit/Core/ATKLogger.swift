@@ -1,9 +1,6 @@
 //
 //  ATKLogger.swift
 //  AdTrackKit
-//
-//  Created by kingj on 2/16/26.
-//
 
 /// **필요한 이유**
 /// -> SDK가 내부에서 뭘 하는지 개발자가 볼 수 있게 로그를 출력하는 도구

@@ -1,9 +1,6 @@
 //
 //  ATKEvent.swift
 //  AdTrackKit
-//
-//  Created by kingj on 2/16/26.
-//
 
 /// **필요한 이유**
 ///   --> 사용자가 뭘 했는지 기록하는 데이터 구조

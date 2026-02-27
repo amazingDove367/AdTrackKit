@@ -1,0 +1,33 @@
+{
+  "name": "adtrackkit-rn",
+  "version": "0.1.0",
+  "description": "AdTrackKit iOS SDK — React Native Bridge (ObjC/Swift Native Module)",
+  "main": "js/index.ts",
+  "types": "js/index.ts",
+  "files": [
+    "ios/",
+    "js/",
+    "AdTrackKitRN.podspec"
+  ],
+  "keywords": [
+    "react-native",
+    "ios",
+    "analytics",
+    "tracking",
+    "native-module",
+    "adtrackkit",
+    "swift",
+    "objective-c"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-native": ">=0.73.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-native": "^0.73.0",
+    "typescript": "^5.0.0"
+  }
+}

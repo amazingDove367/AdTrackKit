@@ -15,13 +15,13 @@ import AdTrackKit
 final class InicisPaymentViewController: UIViewController {
 
     // MARK: - KG이니시스 테스트 설정
-    // 실 서비스 전환 시 서버에서 서명(signature) 생성 후 MID를 교체하세요.
+    // 실 서비스 전환 시 서버에서 서명(signature) 생성 후 MID(상점 ID)를 교체.
     private enum InicisConfig {
-        static let testMID   = "INIpayTest"
-        static let payURL    = "https://mobile.inicis.com/smart/payment/"
+        static let testMID = "INIpayTest"
+        static let payURL = "https://mobile.inicis.com/smart/payment/"
         /// 결제 완료 후 이니시스가 리디렉션할 커스텀 URL 스킴 (Info.plist CFBundleURLTypes 에 등록)
         static let returnScheme = "atkmall"
-        static let returnURL    = "atkmall://payment/result"
+        static let returnURL = "atkmall://payment/result"
     }
 
     // MARK: - Properties

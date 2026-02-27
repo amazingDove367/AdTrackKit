@@ -1,9 +1,6 @@
 //
 //  ATKTracker.swift
 //  AdTrackKit
-//
-//  Created by kingj on 2/16/26.
-//
 
 /// **필요한 이유**
 /// -> SDK를 사용하는 외부 개발자가 접하는 "유일한 창구"

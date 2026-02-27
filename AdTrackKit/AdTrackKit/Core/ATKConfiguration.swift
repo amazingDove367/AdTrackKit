@@ -1,9 +1,6 @@
 //
 //  ATKConfiguration.swift
 //  AdTrackKit
-//
-//  Created by kingj on 2/16/26.
-//
 
 /// **필요한 이유**
 /// SDK를 초기화할 때 여러 설정값을 넘겨야 함

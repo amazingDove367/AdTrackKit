@@ -1,0 +1,20 @@
+name: adtrackkit_flutter_example
+description: AdTrackKit Flutter Plugin 예제 앱
+
+publish_to: none
+version: 1.0.0
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.10.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # 로컬 경로로 플러그인 참조 (배포 후에는 버전으로 교체)
+  adtrackkit_flutter:
+    path: ../
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter

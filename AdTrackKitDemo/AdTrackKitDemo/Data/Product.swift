@@ -16,15 +16,15 @@ struct Product: Hashable, Sendable {
     let badge: Badge?
 
     enum Category: String, CaseIterable, Sendable {
-        case all        = "전체"
+        case all = "전체"
         case electronics = "전자기기"
         case accessories = "액세서리"
-        case lifestyle   = "생활용품"
+        case lifestyle = "생활용품"
     }
 
     enum Badge: String, Sendable {
         case best = "BEST"
-        case new  = "NEW"
+        case new = "NEW"
         case sale = "SALE"
     }
 

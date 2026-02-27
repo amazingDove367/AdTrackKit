@@ -488,7 +488,8 @@ final class ProductDetailViewController: UIViewController {
 
     // MARK: - Actions
 
-    @objc private func buyTapped() {
+    @objc
+    private func buyTapped() {
         ATKTracker.shared.logEvent("begin_checkout", properties: [
             "product_id":   product.id,
             "product_name": product.name,
@@ -498,7 +499,8 @@ final class ProductDetailViewController: UIViewController {
         navigationController?.pushViewController(paymentVC, animated: true)
     }
 
-    @objc private func cartTapped() {
+    @objc
+    private func cartTapped() {
         ATKTracker.shared.logEvent("add_to_cart", properties: [
             "product_id":   product.id,
             "product_name": product.name,
@@ -507,7 +509,8 @@ final class ProductDetailViewController: UIViewController {
         showToast("장바구니에 담았습니다.")
     }
 
-    @objc private func heartTapped() {
+    @objc
+    private func heartTapped() {
         ATKTracker.shared.logEvent("add_to_wishlist", properties: [
             "product_id": product.id
         ])
@@ -515,7 +518,8 @@ final class ProductDetailViewController: UIViewController {
         showToast("찜 목록에 추가되었습니다.")
     }
 
-    @objc private func shareTapped() {
+    @objc
+    private func shareTapped() {
         let text = "\(product.name) - \(product.formattedPrice)\nATK MALL에서 확인하세요!"
         let vc = UIActivityViewController(activityItems: [text], applicationActivities: nil)
         present(vc, animated: true)

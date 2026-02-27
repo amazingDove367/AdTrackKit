@@ -1,9 +1,6 @@
 //
 //  ATKBatchUploader.swift
 //  AdTrackKit
-//
-//  Created by kingj on 2/16/26.
-//
 
 /// **필요한 이유**
 ///   --> 언제, 얼마나 모아서, 어떻게 보낼지를 관리

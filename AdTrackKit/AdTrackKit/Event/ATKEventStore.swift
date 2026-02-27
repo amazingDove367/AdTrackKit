@@ -1,9 +1,6 @@
 //
 //  ATKEventStore.swift
 //  AdTrackKit
-//
-//  Created by kingj on 2/16/26.
-//
 
 /// **필요한 이유**
 ///   --> 이벤트를 즉시 서버에 안 보내고 "잠깐 모아두는 창고"

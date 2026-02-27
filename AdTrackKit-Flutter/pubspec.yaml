@@ -1,0 +1,30 @@
+name: adtrackkit_flutter
+description: >
+  AdTrackKit iOS SDK Flutter Plugin.
+  FlutterMethodChannel 을 통해 Dart ↔ Swift 가 통신하며,
+  iOS 네이티브 이벤트 트래킹 기능을 Flutter 앱에서 사용할 수 있습니다.
+version: 0.1.0
+homepage: https://github.com/yourname/AdTrackKit-Flutter
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.10.0"
+
+# Flutter 플러그인 선언
+# pluginClass: iOS 빌드 시 등록할 Swift 클래스 이름 (FlutterPlugin 프로토콜 채택)
+flutter:
+  plugin:
+    platforms:
+      ios:
+        pluginClass: AdTrackKitFlutterPlugin
+        # Swift 클래스를 직접 지정하는 최신 방식 (Flutter 3.x+)
+        # swiftPluginClass: AdTrackKitFlutterPlugin
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0

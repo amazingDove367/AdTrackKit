@@ -1,9 +1,6 @@
 //
 //  ATKNetworkClient.swift
 //  AdTrackKit
-//
-//  Created by kingj on 2/16/26.
-//
 
 /// **필요한 이유**
 /// --> 이벤트 데이터를 실제로 서버에 HTTP POST로 보내는 역할
